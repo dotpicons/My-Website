@@ -1,0 +1,77 @@
+<link href="https://fonts.googleapis.com/css?family=Dosis|Inconsolata" rel="stylesheet">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="projectstyle.css" />
+</head>
+<script>
+function valid(){
+var name = document.getElementById('name').value.trim();
+var email = document.getElementById('email').value.trim();
+var question = document.getElementById('question').value.split(' ');
+//var testo = question.split(' ');
+
+var fields=false;
+var emailok=false;
+var questionok=false;
+
+if (name.length > 0 && email.length > 0 && question.length > 0){
+  fields=true;
+} else {
+  alert("PLEASE FILL ALL THE FIELDS");
+  return false;
+}
+
+if (email.indexOf("@") > -1){
+  emailok=true;
+}else{
+  alert("PLEASE INSERT A VALID EMAIL");
+  return false;
+}
+
+if (question.length > 10){
+  questionok=true;
+}else{
+  alert("PLEASE PUT MORE THAN 10 WORDS IN THE QUESTION FIELD");
+  return false;
+}
+
+return fields && emailok && questionok;
+}
+</script>
+
+
+<div id="main" class="centro">
+  <header id="header">
+    <div id="nv">
+    <nav id="nav-bar">
+      <ul>
+        <div id=img class="cv">
+    <img id="header-img" src="http://www.specimen-editions.fr/wp-content/uploads/2016/08/Lettre-M.png" alt="Il mio logo">
+        </div>
+        <div id="titolo" class="cv">
+          <h1>Marco Picone Chiodo</h1>
+        </div>
+        <div id="o" class="cv">
+          <li><a href="project1.html" class="nav-link" ><h2>Who am I?</h2></a></li>
+        </div>
+        <div id="a"class="cv">
+          <li><a href="project2.html" class="nav-link"><h2>Contact me</h2></a></li>
+      </div>
+      <div id= "i" class="cv">
+        <li><a  href="project3.html" class="nav-link"><h2>Some projects</h2></a></li>
+      </div>
+   </ul>
+    </nav>
+    </div>
+    </header>
+    <div id="container2">
+    <form class="tak" onsubmit="return valid()">
+      <legend>Contact Me!</legend>
+      <p><input id="name" type="text" placeholder="Name"></p>
+      <p><input id="email" type="text" placeholder="email"></p>
+      <p><textarea id="question" placeholder="Your question" rows="5" cols="70" ></textarea> </p>
+      <p><button type="submit">Submit</button></p>
+  </form>
+  </div>
+<footer>A website by Marco Picone Chiodo</footer>
+ </div>
